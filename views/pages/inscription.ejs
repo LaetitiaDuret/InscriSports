@@ -1,0 +1,22 @@
+<% include ../layout/header %>
+
+<div class="my-container">
+
+    <h1 id="inscris_toi" class="purple">Inscris-toi !</h1>
+
+    <form id="form_inscription" method="POST" action="/inscription">
+        <input name="firstname" placeholder="Prénom">
+        <input name="lastname" placeholder="Nom">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="mdp" placeholder="Mot de passe">
+        <input type="password" name="mdp_conf" placeholder="Confirmation mot de passe">
+        <button class="btn btn-primary" type=submit> Inscription</button>
+    </form>
+
+    <!--<button id="submit_connection">Inscription</button>-->
+
+</div>
+
+</body>
+
+</html>
