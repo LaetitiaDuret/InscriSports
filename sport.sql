@@ -1,8 +1,13 @@
-DROP TABLE Seance ;
-DROP TABLE Sport ;
-DROP TABLE Student ;
-DROP TABLE Subscription ;
-DROP TABLE Inscription ;
+DROP TABLE Seance
+;
+DROP TABLE Sport
+;
+DROP TABLE Student
+;
+DROP TABLE Subscription
+;
+DROP TABLE Inscription
+;
 
 CREATE TABLE Student
 (
@@ -16,7 +21,8 @@ CREATE TABLE Student
     has_licence bit
 );
 
-CREATE TABLE Sport (
+CREATE TABLE Sport
+(
     id int IDENTITY PRIMARY KEY ,
     sport_name VARCHAR(30) NOT NULL ,
     president_id int ,
@@ -24,14 +30,16 @@ CREATE TABLE Sport (
     FOREIGN KEY (president_id) REFERENCES Student(id)
 );
 
-CREATE TABLE Seance (
+CREATE TABLE Seance
+(
     id int IDENTITY PRIMARY KEY ,
     description VARCHAR(30) ,
     sport_id int ,
-    FOREIGN KEY (sport_id) REFERENCES Sport(id) 
+    FOREIGN KEY (sport_id) REFERENCES Sport(id)
 );
 
-CREATE TABLE Subscription (
+CREATE TABLE Subscription
+(
     student_id int NOT NULL ,
     sport_id int NOT NULL ,
     PRIMARY KEY (student_id, sport_id) ,
@@ -39,7 +47,8 @@ CREATE TABLE Subscription (
     FOREIGN KEY (sport_id) REFERENCES Sport(id)
 );
 
-CREATE TABLE Inscription (
+CREATE TABLE Inscription
+(
     student_id int NOT NULL ,
     seance_id int NOT NULL ,
     is_selected bit ,
@@ -48,4 +57,9 @@ CREATE TABLE Inscription (
     FOREIGN KEY (seance_id) REFERENCES Seance(id)
 );
 
-INSERT INTO Student (password, firstname, lastname, email, phone_number, has_car, has_licence) VALUES  ("lol","Laeti", "Duret", "laeti@tb.fr", "06...", 0, 1)
+INSERT INTO Student
+    (password, firstname, lastname, email, phone_number, has_car, has_licence)
+VALUES
+    ("lol", "Laeti", "Duret", "laeti@tb.fr", "06...", 0, 1)
+
+<h1 id="inscris_toi" class="purple">Sport : <%=sport.sport_name%> !</h1>
