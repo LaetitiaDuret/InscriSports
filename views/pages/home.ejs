@@ -1,0 +1,21 @@
+<% include ../layout/header_co %>
+
+<div id="back_color">
+    
+    <h1 id="inscris_toi" class="purple">Bienvenue <%=userData.firstname%> !</h1>
+    
+    <p>Les sports proposés sont :</p>
+        <ul><%sportsList.forEach(function(sport){
+            %>
+            <li><a href="<%= '/sports/' + sport.id %>"><%=sport.sport_name%></a></li>
+        <%
+        });%>
+        </ul>
+    
+
+
+</div>
+
+</body>
+
+</html>

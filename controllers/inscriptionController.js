@@ -7,7 +7,6 @@ module.exports = function(app, Connection, config, TYPES, Request) {
   });
 
   app.post("/inscription", urlencondingParser, (req, res) => {
-    res.render("pages/contact-success.ejs", { userData: req.body });
     var connection = new Connection(config);
 
     // Attempt to connect and execute queries if connection goes through
@@ -40,6 +39,12 @@ module.exports = function(app, Connection, config, TYPES, Request) {
       request.addParameter("name", TYPES.VarChar, body.firstname);
       request.addParameter("lastname", TYPES.VarChar, body.lastname);
       request.addParameter("email", TYPES.VarChar, body.email);
+
+      request.on("doneInProc", function(rowCount, more) {
+        console.log(rowCount + " rows returned after inscription");
+        req.session.userData = req.body;
+        res.redirect("home");
+      });
 
       connection.execSql(request);
     }
