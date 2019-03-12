@@ -1,145 +1,51 @@
 body {
-    font-family: Roboto;
+  font-family: Roboto;
 }
 
 .navbar {
-    margin: 0;
+  margin: 0;
 }
 
-.my-container{
-    background-color:#00BBD6;
-    height: 100%;
-    padding: 3%;
+.my-container {
+  background-color: #00bbd6;
+  height: 100%;
+  padding: 3%;
 }
 
-h1{
-    text-align: center;
-    margin-top: 0;
-}
-.purple{
-    color: #520CE8;
+#sport-desc {
+  margin: 50px;
+  font-size: 16px;
 }
 
-#form_inscription{
-    display: flex;
-    flex-direction: column;
-    height: 80%;
-    justify-content: space-around;
-    align-items: center;
+ul {
+  margin: 50px;
+  font-size: 20px;
 }
 
-#form_inscription input{
-    width: 50%;
-    background: #EAEFF1;
-    border-radius: 15px;
-    border : none;
-    padding: 10px;
+#subs li {
+  margin: 10px;
 }
 
-/*#connecte_toi{
-    position: absolute;
-    width: 223px;
-    height: 42px;
-    left: 560px;
-    top: 150px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    line-height: normal;
-    font-size: 35px;
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+.purple {
+  color: #520ce8;
 }
 
-#inscris_toi{
-    position: absolute;
-    width: 223px;
-    height: 42px;
-    left: 580px;
-    top: 150px;
-
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: bold;
-    line-height: normal;
-    font-size: 35px;
+#form_inscription {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: space-around;
+  align-items: center;
 }
 
-#enter_firstname{
-    position: absolute;
-    width: 238px;
-    height: 48px;
-    left: 550px;
-    top: 250px;
-    padding-left: 10px;
-
-    background: #EAEFF1;
-    border-radius: 15px;
-    border : none;
+#form_inscription input {
+  width: 50%;
+  background: #eaeff1;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
 }
-
-#enter_lastname{
-    position: absolute;
-    width: 238px;
-    height: 48px;
-    left: 550px;
-    top: 310px;
-    padding-left: 10px;
-
-    background: #EAEFF1;
-    border-radius: 15px;
-    border : none;
-}
-
-#enter_email{
-    position: absolute;
-    width: 238px;
-    height: 48px;
-    left: 550px;
-    top: 370px;
-    padding-left: 10px;
-
-    background: #EAEFF1;
-    border-radius: 15px;
-    border : none;
-}
-
-#enter_mdp{
-    position: absolute;
-    width: 238px;
-    height: 48px;
-    left: 550px;
-    top: 430px;
-    padding-left: 10px;
-
-    background: #EAEFF1;
-    border-radius: 15px;
-    border: none;
-}
-
-#enter_mdp_conf{
-    position: absolute;
-    width: 238px;
-    height: 48px;
-    left: 550px;
-    top: 490px;
-    padding-left: 10px;
-
-    background: #EAEFF1;
-    border-radius: 15px;
-    border: none;
-}
-
-#submit_connection{
-    position: absolute;
-    width: 238px;
-    height: 46px;
-    left: 550px;
-    top: 570px;
-
-    background: #520CE8;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.16);
-    border-radius: 50px;
-    color: white;
-    border : none;
-}*/
-

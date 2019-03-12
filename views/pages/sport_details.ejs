@@ -1,12 +1,16 @@
 <% include ../layout/header_co %>
-<div id="back_color">
+<div id="back_color" class="my-container">
 
-<h1 id="inscris_toi" class="purple">Sport : <%=sportData.sport_name%> !</h1>
-<p>Description : <%=sportData.description%> </p>
+<h1 class="purple">Sport : <%=sportData.sport_name%> !</h1>
 
-<form id="form_subscription" method="POST" action="/sports/<%=sportId%>"> 
-    <button class="btn btn-primary" type=submit> S'abonner</button>
-</form>
+<div id="sport-desc">
+
+    <p >Description : <%=sportData.description%> </p>
+    
+    <form id="form_subscription" method="POST" action="/sports/<%=sportId%>"> 
+        <button class="btn btn-primary" type=submit>S'abonner</button>
+    </form>
+</div>
      
 </div>
 

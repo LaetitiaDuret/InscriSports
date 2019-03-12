@@ -1,8 +1,8 @@
 <% include ../layout/header_co %>
 
-<div id="back_color">
+<div id="subs" class="my-container">
     <%if(subscriptionsList != null){ %>
-    <h1 id="inscris_toi" class="purple">Voici la liste de tes abonnements <%=userData.firstname%> !</h1>
+    <h1 class="purple">Voici la liste de tes abonnements <%=userData.firstname%> !</h1>
     
     <ul><%subscriptionsList.forEach(function(sport){
         %>
@@ -13,12 +13,13 @@
     <%}%>
 
     <%if(seancesList != null){ %>
-    <h1 id="inscris_toi" class="purple">Voici la liste des seances de <%=sportId%> !</h1>
+    <h1 class="purple">Voici la liste des seances !</h1>
     
     <ul><%seancesList.forEach(function(seance){
         %>
-        <li><%=seance.description%> le <%=seance.seance_date%> </li>
-        <button>S'inscrire</button>
+        <li><%=seance.description%> le <%=seance.seance_date.toLocaleDateString("fr-FR",{hour:"numeric", minute:"numeric"})%> 
+            <button class="btn btn-primary">S'inscrire</button>
+        </li>
     <%
     });%>
     </ul>
