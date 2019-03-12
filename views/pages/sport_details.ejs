@@ -1,10 +1,12 @@
-<!--Header hors connexion si req.session.userData est null-->
-<!--Sinon Header version connecté-->
-<% include ../layout/header_not_co %>
+<% include ../layout/header_co %>
 <div id="back_color">
 
-<h1 id="inscris_toi" class="purple">Sport : <%=sportDescription.sport_name%> !</h1>
-<p>Description : <%=sportDescription.description%> </p>
+<h1 id="inscris_toi" class="purple">Sport : <%=sportData.sport_name%> !</h1>
+<p>Description : <%=sportData.description%> </p>
+
+<form id="form_subscription" method="POST" action="/sports/<%=sportId%>"> 
+    <button class="btn btn-primary" type=submit> S'abonner</button>
+</form>
      
 </div>
 

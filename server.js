@@ -6,6 +6,7 @@ const session = require("express-session");
 const inscriptionController = require("./controllers/inscriptionController");
 const homeController = require("./controllers/homeController");
 const sportsController = require("./controllers/sportsController");
+const subscriptionController = require("./controllers/subscriptionsController");
 
 const app = express();
 //const router = express.Router();
@@ -44,6 +45,7 @@ var config = {
 inscriptionController(app, Connection, config, TYPES, Request);
 homeController(app, Connection, config, TYPES, Request);
 sportsController(app, Connection, config, TYPES, Request);
+subscriptionController(app, Connection, config, TYPES, Request);
 
 app.get("/", (req, res) => {
   res.render("pages/index.ejs");

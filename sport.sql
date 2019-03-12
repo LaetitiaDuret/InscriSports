@@ -62,4 +62,8 @@ INSERT INTO Student
 VALUES
     ("lol", "Laeti", "Duret", "laeti@tb.fr", "06...", 0, 1)
 
-<h1 id="inscris_toi" class="purple">Sport : <%=sport.sport_name%> !</h1>
+
+INSERT INTO Seance
+    (description, sport_id, seance_date)
+VALUES
+    ('Nouvelle seance rdv au i2 !', 2, '2019/03/08')

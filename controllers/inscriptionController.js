@@ -25,13 +25,14 @@ module.exports = function(app, Connection, config, TYPES, Request) {
 
       // Read all rows from table
       var request = new Request(
-        "INSERT INTO Student (password, firstname, lastname, email) VALUES  (@password,@name,@lastname, @email)",
+        "INSERT INTO Student (password, firstname, lastname, email) VALUES (@password,@name,@lastname, @email) ; SELECT @@identity",
         function(err, rowCount, rows) {
           console.log(err);
           console.log(rowCount + " row(s) returned");
           //process.exit();
         }
       );
+      var ident;
 
       const { body } = req;
       //request.addParameter("id", TYPES.Int, 0);
@@ -40,13 +41,20 @@ module.exports = function(app, Connection, config, TYPES, Request) {
       request.addParameter("lastname", TYPES.VarChar, body.lastname);
       request.addParameter("email", TYPES.VarChar, body.email);
 
-      request.on("doneInProc", function(rowCount, more) {
-        console.log(rowCount + " rows returned after inscription");
-        req.session.userData = req.body;
-        res.redirect("home");
-      });
-
       connection.execSql(request);
+
+      request.on("row", function(columns) {
+        if (columns[0].value === null) {
+          console.log("NULL");
+        } else {
+          ident = columns[0].value;
+          console.log("Le num étudiant est : " + ident);
+          req.session.userData = req.body;
+          req.session.userData.id = ident;
+          console.log("Le num de session est : " + req.session.userData.id);
+          res.redirect("home");
+        }
+      });
     }
   });
 };

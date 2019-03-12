@@ -1,0 +1,31 @@
+<% include ../layout/header_co %>
+
+<div id="back_color">
+    <%if(subscriptionsList != null){ %>
+    <h1 id="inscris_toi" class="purple">Voici la liste de tes abonnements <%=userData.firstname%> !</h1>
+    
+    <ul><%subscriptionsList.forEach(function(sport){
+        %>
+        <li><a href="<%= '/subscription/' + sport.id %>"><%=sport.sport_name%></a></li>
+    <%
+    });%>
+    </ul>
+    <%}%>
+
+    <%if(seancesList != null){ %>
+    <h1 id="inscris_toi" class="purple">Voici la liste des seances de <%=sportId%> !</h1>
+    
+    <ul><%seancesList.forEach(function(seance){
+        %>
+        <li><%=seance.description%> le <%=seance.seance_date%> </li>
+        <button>S'inscrire</button>
+    <%
+    });%>
+    </ul>
+    <%}%>
+
+</div>
+
+
+</body>
+</html>
